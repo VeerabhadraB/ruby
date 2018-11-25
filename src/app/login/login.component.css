@@ -1,0 +1,15 @@
+/* .ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; 
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #f81c2f;
+  }
+   */
+   .myblock {
+    background-color: green;
+    width: 300px;
+    height: 250px;
+    border-radius: 5px;
+    margin: 5rem;
+}
