@@ -1,39 +1,57 @@
-/* .ng-valid[required], .ng-valid.required  {
-    border-left: 5px solid #42A948; 
-  }
-  
-  .ng-invalid:not(form)  {
-    border-left: 5px solid #f81c2f;
-  }
-   /* 
-   .myblock {
-    background-color: green;
-    width: 300px;
-    height: 250px;
-    border-radius: 5px;
-    margin: 5rem;
-} */
+
 .login-bg{
   background-image: url('../../assets/images/iot-bg.jpg');
-/* background-color: black; */
-
-height: 592px;
-color:#00ffcc;
+  height: 1100px;
+  z-index: -1;
 }
-.login-bg>.row{
-background-color: black;
-opacity: 0.7;
-} 
-.login-fom-group{
-  padding: 15px 0px 0px 15px;
+.login-bg .data_bot{
+  padding-top: 30px;
+  background-color: transparent;
+  text-align: center;
 }
-.login-form-control{
-  border: none !important;
-  background-color: black;
-  border-bottom: #00ffcc solid 2px !important;
-  z-index: 99999;
+.login-bg .data_bot h1{
+  font-size: 80px;
+  background-color: transparent;
+  font-weight: 500;
+  color: rgb(32, 32, 32);
+  text-shadow: -1px 0  rgb(7, 241, 210), 0 2px  rgb(7, 241, 210), 2px 0  rgb(7, 241, 210), 0 -1px  rgb(7, 241, 210);
+  
 }
-.login-label{
-  position: absolute !important;
-  left: -18px !important;
+.login-bg .data_bot div small{
+  color: rgb(7, 241, 210);
+  
+}
+.login-text{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.3); /* Black w/opacity/see-through */
+  color: rgb(7, 241, 210);
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  width: 100%;
+  padding: 20px;
+}
+.login-text .login-fom-group label{
+  position: relative;
+  left: -42px;
+  top: 33px;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgb(7, 241, 210);
+}
+.login-text .login-fom-group .login-form-control{
+  color: rgb(7, 241, 210);
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(7, 241, 210);
+}
+.login-btn button{
+  z-index: 999999;
+  background-color: rgb(7, 241, 210);
+  width: 120px;
+  padding: 15px 0px 15px 0px;
+  color: #fff;
 }

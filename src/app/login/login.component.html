@@ -1,50 +1,58 @@
 <div class="login-bg">
-  <div class="row h-100 justify-content-center align-items-center">
-    <div class="col-3">
-      <form [formGroup]="login" (ngSubmit)="formSubmit()">
-        <div class="form-group login-fom-group">
-            <label for="username" class="login-label">Username</label>
-            <input type="text" class="form-control login-form-control" formControlName="username"
-              [ngClass] = "{ 'is-invalid': username.invalid && (username.dirty || username.touched)}">
-              <!-- Showing Errors -->
-            <div class="alert alert-danger" *ngIf="username.invalid && (username.dirty || username.touched)">
-              <div *ngIf="username.errors.required">Please Enter name!</div>
-              <div *ngIf="username.errors.minlength">Name should be 4 characters!</div>
-              <div *ngIf="username.errors.maxlength">Name should not greater 20 characters!</div>
-            </div>
-            <!-- Showing success message -->
-            <div class="alert alert-success" *ngIf="username.valid">
-              Name is valid!
-            </div>
+    <div class="data_bot">
+        <h1>DATABOT </h1>
+        <div>
+            <small>your data ingestion tool</small>
         </div>
-        <div class="form-group login-fom-group" >
-          <label for="useremail" class="login-label">Email</label>
-          <input type="email" class="form-control login-form-control" formControlName="useremail"
-            [ngClass]="{'is-invalid': useremail.invalid && (useremail.dirty || useremail.touched)}">
-          <div class="alert alert-danger" *ngIf="useremail.invalid && (useremail.dirty || useremail.touched)">
-            Please enter valid email!
-          </div>
-          <div class="alert alert-success" *ngIf="!useremail.errors">
-            Valid
-          </div>
-        </div>
-        <div class="form-group login-fom-group" >
-          <label for="password " class="login-label" >password</label>
-          <input type="password" class="form-control login-form-control" formControlName="password"
-          [ngClass]="{'is-invalid': password.invalid && (password.dirty || password.touched)}"
-          >
-          <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">Please enter valid password</div>
-          <div class="alert alert-success" *ngIf="!password.errors && timeset,settime" data-dismiss="alert" aria-label="Close" aria-hidden="">
-            Valid
-          </div>
-        </div>
-       
-      <button type="submit" [disabled]="!login.valid">Submit</button>
-      </form>
     </div>
-  </div>
+    <!-- Form row starts -->
+    <div class="row h-100 justify-content-center align-items-center login-text">
+        <div class="col-3 col-xs-4">
+          <!--  Form starts -->
+          <form [formGroup]="login" (ngSubmit)="formSubmit()">
+            <!-- <div class="form-group login-fom-group">
+                <label for="username" class="login-label">Username</label>
+                <input type="text" class="form-control login-form-control" formControlName="username"
+                  [ngClass] = "{ 'is-invalid': username.invalid && (username.dirty || username.touched)}">
+                  ///Showing Errors///
+                <div class="alert alert-danger" *ngIf="username.invalid && (username.dirty || username.touched)">
+                  <div *ngIf="username.errors.required">Please Enter name!</div>
+                  <div *ngIf="username.errors.minlength">Name should be 4 characters!</div>
+                  <div *ngIf="username.errors.maxlength">Name should not greater 20 characters!</div>
+                </div>
+                ///Showing success message ///
+                <div class="alert alert-success" *ngIf="username.valid">
+                  Name is valid!
+                </div>
+            </div> -->
+            <div class="form-group login-fom-group" [@useremail]='in'>
+              <label for="useremail" class="login-label">Email</label>
+              <input type="email" class="form-control login-form-control" formControlName="useremail"
+                [ngClass]="{'is-invalid': useremail.invalid && (useremail.dirty || useremail.touched)}">
+              <div class="alert alert-danger" *ngIf="useremail.invalid && (useremail.dirty || useremail.touched)">
+                Please enter valid email!
+              </div>
+              <div class="alert alert-success" *ngIf="!useremail.errors">
+                Valid
+              </div>
+            </div>
+            <div class="form-group login-fom-group" [@userpassword]='in' >
+              <label for="password " class="login-label" >password</label>
+              <input type="password" class="form-control login-form-control" formControlName="password"
+              [ngClass]="{'is-invalid': password.invalid && (password.dirty || password.touched)}"
+              >
+              <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">Please enter valid password</div>
+              <div class="alert alert-success" *ngIf="!password.errors && timeset,settime" data-dismiss="alert" aria-label="Close" aria-hidden="">
+                Valid
+              </div>
+            </div>
+            <div class="clearfix login-btn" [@loginbtn]='in'>
+                <button type="submit" [disabled]="!login.valid" class="btn btn-info float-right" >Submit</button>
+            </div>
+              
+          </form>
+        </div>
+      </div>
 </div>
-<div [@inputRight]="state">
-    Helllpooikldskafjkladsfl
-</div>
+
   
