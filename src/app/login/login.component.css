@@ -5,11 +5,35 @@
   .ng-invalid:not(form)  {
     border-left: 5px solid #f81c2f;
   }
-   */
+   /* 
    .myblock {
     background-color: green;
     width: 300px;
     height: 250px;
     border-radius: 5px;
     margin: 5rem;
+} */
+.login-bg{
+  background-image: url('../../assets/images/iot-bg.jpg');
+/* background-color: black; */
+
+height: 592px;
+color:#00ffcc;
+}
+.login-bg>.row{
+background-color: black;
+opacity: 0.7;
+} 
+.login-fom-group{
+  padding: 15px 0px 0px 15px;
+}
+.login-form-control{
+  border: none !important;
+  background-color: black;
+  border-bottom: #00ffcc solid 2px !important;
+  z-index: 99999;
+}
+.login-label{
+  position: absolute !important;
+  left: -18px !important;
 }

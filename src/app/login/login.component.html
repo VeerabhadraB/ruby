@@ -1,53 +1,50 @@
-<form [formGroup]="login" (ngSubmit)="formSubmit()">
-  <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" class="form-control" formControlName="username"
-        [ngClass] = "{ 'is-invalid': username.invalid && (username.dirty || username.touched)}">
-        <!-- Showing Errors -->
-      <div class="alert alert-danger" *ngIf="username.invalid && (username.dirty || username.touched)">
-        <div *ngIf="username.errors.required">Please Enter name!</div>
-        <div *ngIf="username.errors.minlength">Name should be 4 characters!</div>
-        <div *ngIf="username.errors.maxlength">Name should not greater 20 characters!</div>
-      </div>
-      <!-- Showing success message -->
-      <div class="alert alert-success" *ngIf="username.valid">
-        Name is valid!
-      </div>
-  </div>
-  <div class="form-group">
-    <label for="useremail">Email</label>
-    <input type="email" class="form-control" formControlName="useremail"
-      [ngClass]="{'is-invalid': useremail.invalid && (useremail.dirty || useremail.touched)}">
-    <div class="alert alert-danger" *ngIf="useremail.invalid && (useremail.dirty || useremail.touched)">
-      Please enter valid email!
+<div class="login-bg">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-3">
+      <form [formGroup]="login" (ngSubmit)="formSubmit()">
+        <div class="form-group login-fom-group">
+            <label for="username" class="login-label">Username</label>
+            <input type="text" class="form-control login-form-control" formControlName="username"
+              [ngClass] = "{ 'is-invalid': username.invalid && (username.dirty || username.touched)}">
+              <!-- Showing Errors -->
+            <div class="alert alert-danger" *ngIf="username.invalid && (username.dirty || username.touched)">
+              <div *ngIf="username.errors.required">Please Enter name!</div>
+              <div *ngIf="username.errors.minlength">Name should be 4 characters!</div>
+              <div *ngIf="username.errors.maxlength">Name should not greater 20 characters!</div>
+            </div>
+            <!-- Showing success message -->
+            <div class="alert alert-success" *ngIf="username.valid">
+              Name is valid!
+            </div>
+        </div>
+        <div class="form-group login-fom-group" >
+          <label for="useremail" class="login-label">Email</label>
+          <input type="email" class="form-control login-form-control" formControlName="useremail"
+            [ngClass]="{'is-invalid': useremail.invalid && (useremail.dirty || useremail.touched)}">
+          <div class="alert alert-danger" *ngIf="useremail.invalid && (useremail.dirty || useremail.touched)">
+            Please enter valid email!
+          </div>
+          <div class="alert alert-success" *ngIf="!useremail.errors">
+            Valid
+          </div>
+        </div>
+        <div class="form-group login-fom-group" >
+          <label for="password " class="login-label" >password</label>
+          <input type="password" class="form-control login-form-control" formControlName="password"
+          [ngClass]="{'is-invalid': password.invalid && (password.dirty || password.touched)}"
+          >
+          <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">Please enter valid password</div>
+          <div class="alert alert-success" *ngIf="!password.errors && timeset,settime" data-dismiss="alert" aria-label="Close" aria-hidden="">
+            Valid
+          </div>
+        </div>
+       
+      <button type="submit" [disabled]="!login.valid">Submit</button>
+      </form>
     </div>
-    <div class="alert alert-success" *ngIf="!useremail.errors">
-      Valid
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="password">password</label>
-    <input type="password" class="form-control" formControlName="password"
-    [ngClass]="{'is-invalid': password.invalid && (password.dirty || password.touched)}"
-    >
-    <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">Please enter valid password</div>
-    <div class="alert alert-success" *ngIf="!password.errors">Valid</div>
-  </div>
-  
-<button type="submit" [disabled]="!login.valid">Submit</button>
-</form>
-<!--  -->
-<!-- <div class="container p-4">
-  <div class="row">
-    <div class="col text-center">
-      <a (click)="changeState('state2')" class="btn btn-danger">Change To State 2</a>
-    </div>
-    <div class="col text-center">
-      <a (click)="changeState('state1')" class="btn btn-info">Change To State 1</a>
-    </div>
-  </div>
-  <div class="row justify-content-center align-items-center">
-    <div #currentState="toState"></div>
   </div>
 </div>
-<div [@changeState]="currentState" class="myblock mx-auto"></div> -->
+<div [@inputRight]="state">
+    Helllpooikldskafjkladsfl
+</div>
+  

@@ -1,26 +1,27 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { trigger,style,state,transition,animate} from '@angular/animations';
+import { trigger,style,state,transition,animate, animation} from '@angular/animations';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   animations: [
-    trigger('changeState', [
-      state('state1', style({
-        backgroundColor: 'green',
-        transform: 'scale(1)'
-      })),
-      state('state2', style({
-        backgroundColor: 'red',
-        transform: 'scale(1.5)'
-      })),
-      transition('*=>state1', animate('300ms')),
-      transition('*=>state2', animate('2000ms'))
-    ])]
+    trigger('inputRight',[
+        state('in',style({
+          transform: 'translateX(-20) scale(1)',
+          offset:'0.4'
+          }),
+        ),
+      ]),
+    ]
 })
 export class LoginComponent implements OnInit {
   //currentState;
+  state='inanimation';
+  inanimation = 'out';
+  timeset=true;
+
   constructor(private fb:FormBuilder) { }
   login:FormGroup;
   ngOnInit() {
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
       "password": new FormControl(null,[Validators.required,Validators.minLength(4)])
     });
   }
+  settime = setTimeout(()=>this.timeset=false,30000)
   get username(){
     return this.login.get('username');
   }
@@ -38,14 +40,11 @@ export class LoginComponent implements OnInit {
   }
   get password(){
     return this.login.get('password');
+
   }
   formSubmit(){
     console.log(this.login.value);
     this.login.reset();
   }
-  // title = 'angularanimation01';
-  // toState = 'state1';
-  // changeState(state: any) {
-  //   this.toState = state;
-  // }
+
 }
