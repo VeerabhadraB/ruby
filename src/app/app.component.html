@@ -1,1 +1,16 @@
-<router-outlet></router-outlet>
+<app-header (navSelected)="navgate($event)"></app-header>
+<div class="container">
+    <!-- <app-cockpit 
+    (serverCreated) = "newServerAdded($event)"
+    (bluePrintCreated) = "newBluePrintAdded($event)"
+    ></app-cockpit>-->
+    <div class="col-md-12">
+        <app-recipe *ngIf = "navString==='recipe'"></app-recipe>
+        <app-shoping *ngIf = "navString ==='shoping-list'"></app-shoping>
+        <!-- <app-server-element 
+        *ngFor = "let elements of serverElements"
+        [elements] = "elements"></app-server-element>-->
+        
+    </div>
+    <router-outlet></router-outlet>
+</div>

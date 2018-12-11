@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Recipe</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <app-recipe-item *ngFor="let replacEl of recipes"
+        [recipe] = "replacEl"
+        (recipeSelected)="getSelectedRecipe(replacEl)"></app-recipe-item>
+    </div>
+</div>
+

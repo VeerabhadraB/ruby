@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { trigger,style,state,transition,animate, animation, keyframes} from '@angular/animations';
+import { AuthserviceService } from '../auth/authservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -76,7 +78,7 @@ export class LoginComponent implements OnInit {
   state='inanimation';
   timeset=true;
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private auth:AuthserviceService,private router:Router) { }
   login:FormGroup;
   ngOnInit() {
     this.login = new FormGroup({
@@ -97,7 +99,13 @@ export class LoginComponent implements OnInit {
 
   }
   formSubmit(){
-    console.log(this.login.value);
+    this.auth.logIn(this.login.value.useremail).subscribe(
+      res=>{
+        localStorage.setItem('TOKEN',res.token);
+        this.router.navigate(["/recipelist"]);
+      },
+      err=>console.log(err)
+    );
     this.login.reset();
   }
 
