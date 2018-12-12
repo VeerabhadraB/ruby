@@ -20,6 +20,8 @@ import { ServerElementComponent } from './server-element/server-element.componen
 import { HoverHighliterDirective } from './helpers/hover-highliter.directive';
 import { AuthserviceService } from './auth/authservice.service';
 import { AuthgurdService } from './auth/authgurd.service';
+import { ColerpickerDirective } from './shared/colerpicker.directive';
+import { ShortPipe } from './shared/short.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { AuthgurdService } from './auth/authgurd.service';
      RecipeItemComponent,
      CockpitComponent,
      ServerElementComponent,
-     HoverHighliterDirective
+     HoverHighliterDirective,
+     ColerpickerDirective,
+     ShortPipe
   ],
   imports: [
     BrowserModule,
